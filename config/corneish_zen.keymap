@@ -24,6 +24,74 @@
                         label = "QWERTY";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | ESC L|  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
+//           | CTRL | SPC ALT | GUI LWR |   | ENT RSE | SPC | CTRL |
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &lt 3 ESC &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+       &kp LCTRL &mt LALT SPACE &lt 1 LGUI   &lt 2 RET &kp SPACE &kp RCTRL
+                        >;
+                };
+                lower_layer {
+                        label = "SYMNUM";
+// -----------------------------------------------------------------------------------------
+// |   `  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL  |
+// |   ~  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |   \  |
+// | SHFT | CAPS| "|" |  {  |  }  |  _  |   |  -  |  +  |  =  |  [  |  ]  | SHFT |
+//              | CTRL | SPC ALT | GAME |   | GAME | SPC | CTRL |
+                        bindings = <
+   &kp GRAVE &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp STAR  &kp LPAR &kp RPAR &kp DEL
+   &kp TILDE &kp N1   &kp N2   &kp N3   &kp N4   &kp N5      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp BSLH
+   &kp LSHFT &kp CAPS &kp PIPE &kp LBRC &kp RBRC &kp UNDER   &kp MINUS &kp PLUS  &kp EQUAL &kp LBKT &kp RBKT &kp TILDE
+                           &kp LCTRL &mt LALT SPACE &tog 4   &tog 4 &kp SPACE &kp RCTRL
+                        >;
+                };
+                raise_layer {
+                        label = "FNAVBT";
+// -----------------------------------------------------------------------------------------
+// | MUTE | VOL+ |  F7  |  F8  |  F9  | F12 |   |      | PGUP |  UP  | PGDN |      |     |
+// |      |  PP  |  F4  |  F5  |  F6  | F11 |   | HOME | LEFT | DOWN | RIGHT| END  |     |
+// | PSCRN| VOL- |  F1  |  F2  |  F3  | F10 |   | BTCLR| BT1  | BT2  | BT3  | BT4  | BT5 |
+//                   | CTRL | SPC ALT | GUI |   | ENT RSE | SPC | CTRL |
+                        bindings = <
+   &kp C_MUTE &kp C_VOL_UP &kp F7 &kp F8 &kp F9 &kp F12   &none      &kp PG_UP    &kp UP       &kp PG_DN    &none        &trans
+   &none      &kp C_PP     &kp F4 &kp F5 &kp F6 &kp F11   &kp HOME   &kp LEFT     &kp DOWN     &kp RIGHT    &kp END      &none
+   &kp PSCRN  &kp C_VOL_DN &kp F1 &kp F2 &kp F3 &kp F10   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+                      &kp LCTRL &mt LALT SPACE &kp LGUI   &lt 2 RET &kp SPACE &kp RCTRL
+                        >;
+                };
+                game_layer {
+                        label = "GAME";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | ESC L|  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
+//                | ALT | SPC | GUI LWR |   | ENT RSE | SPC | CTRL |
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &lt 3 ESC &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+             &kp LALT &kp SPACE &lt 1 LGUI   &lt 2 RET &kp SPACE &kp RCTRL
+                        >;
+                };
+        };
+};
+
+
+
+
+/*
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+                        label = "QWERTY";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // | ESC  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //           | CTRL | SPC ALT | GUI LWR |   | ENT RSE | SPC | CTRL |
@@ -66,7 +134,4 @@
         };
 };
 
-
-/*
-test comment
 */
